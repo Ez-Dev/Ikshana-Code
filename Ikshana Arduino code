@@ -1,0 +1,33 @@
+#include <Stepper.h>
+
+const int stepsPerRevolution = 200;
+Stepper stepper = Stepper(stepsPerRevolution, 2,3,4,5);
+//steps needed for = (stepsPerRevolution / 360) * 15
+int stepsToShiftOneCell = 8;
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  stepper.setSpeed(10);
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  
+
+  //check time and if yes
+  dispensePill();
+
+}
+
+void dispensePill(){
+
+  //buzzer sequence
+  //show display
+  //get button confirmation
+  //activate magent
+  stepper.step(stepsToShiftOneCell);
+  //deacvtivate magnet
+  //show display
+}
